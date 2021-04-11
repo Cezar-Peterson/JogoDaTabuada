@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        background-color: lightblue;
+    }
+    div#menu.aparece{
+        text-align: center;
+        align-items: center;
+    }
+    div#menu.some{
+        max-width: 0vw;
+        width: 0vw;
+        height: 0vh;
+        max-height: 0vh;
+        overflow: auto;
+    }
+    h1{
+        font-size: 100px;
+    }
+    label{
+        font-size: 35px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        transition: .4s;
+    }
+    button{
+        width: 200px;
+        height: 80px;
+        border-radius: 40px;
+        background-color: rgb(141, 198, 218);
+        border: 2px solid black;
+        margin: 10px;
+        font-size: 30px;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        transition: .4s;
+        outline: none;
+    }
+    
+    button:hover{
+        box-shadow: 0px 10px 20px black;
+        transform: scale( 1.1);
+    }
+    
+
+    div#dt1.aparece{
+        text-align: center;
+        align-items: center;
+    }
+    div#dt1.some{
+        max-width: 0vw;
+        width: 0vw;
+        height: 0vh;
+        max-height: 0vh;
+        overflow: auto;
+    }
+
+    div#dt2.aparece{
+        text-align: center;
+        align-items: center;
+    }
+    div#dt2.some{
+        max-width: 0vw;
+        width: 0vw;
+        height: 0vh;
+        max-height: 0vh;
+        overflow: auto;
+    }
+
+    div#dt3.aparece{
+        text-align: center;
+        align-items: center;
+    }
+    div#dt3.some{
+        max-width: 0vw;
+        width: 0vw;
+        height: 0vh;
+        max-height: 0vh;
+        overflow: auto;
+    }
+
+    div#dt4.aparece{
+        text-align: center;
+        align-items: center;
+    }
+    div#dt4.some{
+        max-width: 0vw;
+        width: 0vw;
+        height: 0vh;
+        max-height: 0vh;
+        overflow: auto;
+    }
+
+    div#dt5.aparece{
+        text-align: center;
+        align-items: center;
+    }
+    div#dt5.some{
+        max-width: 0vw;
+        width: 0vw;
+        height: 0vh;
+        max-height: 0vh;
+        overflow: auto;
+    }
+</style>
+<body>
+    <div id="menu">
+        <h1>Jogo da tabuada</h1>
+        <label >QUAL TABUADA VOCÊ QUER?</label>
+        <br><br><br>
+        <button id="t1" onclick="ot1()">1</button>
+        <button id="t2" onclick="ot2()">2</button>
+        <button id="t3" onclick="ot3()">3</button>
+        <button id="t4" onclick="ot4()">4</button>
+        <button id="t5" onclick="ot5()">5</button>
+    </div>
+
+
+    <div id="dt1">
+        <label id="esp">Tabuada do 1</label>
+        <br><br>
+        <label id="esp">Responda as questões:</label>
+        <br><br>
+        <label >Quanto é <label id="valor1t1">1</label> x <label id="valor2t1"></label>?</label>
+        <br><br>
+        <button onclick="op1t1()" id="op1t1"></button>
+        <button onclick="op2t1()" id="op2t1"></button>
+        <button onclick="op3t1()" id="op3t1"></button>
+        <button onclick="op4t1()" id="op4t1"></button>
+        <br><br><br>
+        <label id="acerto"></label>
+        <br><br><br>
+        <button onclick="reiniciar()" id="reiniciar">Jogar de novo</button>
+        <br><br><br>
+        <button onclick="voltarmenu()" id="menuvoltar">Voltar para o menu</button>
+
+    </div>
+
+    <div id="dt2">
+        <label id="esp">Tabuada do 2</label>
+        <br><br>
+        <label id="esp">Responda as questões:</label>
+        <br><br>
+        <label >Quanto é <label id="valor1t2">2</label> x <label id="valor2t2"></label>?</label>
+        <br><br>
+        <button onclick="op1t2()" id="op1t2"></button>
+        <button onclick="op2t2()" id="op2t2"></button>
+        <button onclick="op3t2()" id="op3t2"></button>
+        <button onclick="op4t2()" id="op4t2"></button>
+        <br><br><br>
+        <label id="acerto2"></label>
+        <br><br><br>
+        <button onclick="reiniciar2()" id="reiniciar2">Jogar de novo</button>
+        <br><br><br>
+        <button onclick="voltarmenu2()" id="menuvoltar2">Voltar para o menu</button>
+
+    </div>
+
+    <div id="dt3">
+        <label id="esp">Tabuada do 3</label>
+        <br><br>
+        <label id="esp">Responda as questões:</label>
+        <br><br>
+        <label >Quanto é <label id="valor1t2">3</label> x <label id="valor2t3"></label>?</label>
+        <br><br>
+        <button onclick="op1t3()" id="op1t3"></button>
+        <button onclick="op2t3()" id="op2t3"></button>
+        <button onclick="op3t3()" id="op3t3"></button>
+        <button onclick="op4t3()" id="op4t3"></button>
+        <br><br><br>
+        <label id="acerto3"></label>
+        <br><br><br>
+        <button onclick="reiniciar3()" id="reiniciar3">Jogar de novo</button>
+        <br><br><br>
+        <button onclick="voltarmenu3()" id="menuvoltar3">Voltar para o menu</button>
+
+    </div>
+    <div id="dt4">
+        <label id="esp">Tabuada do 4</label>
+        <br><br>
+        <label id="esp">Responda as questões:</label>
+        <br><br>
+        <label >Quanto é <label id="valor1t4">4</label> x <label id="valor2t4"></label>?</label>
+        <br><br>
+        <button onclick="op1t4()" id="op1t4"></button>
+        <button onclick="op2t4()" id="op2t4"></button>
+        <button onclick="op3t4()" id="op3t4"></button>
+        <button onclick="op4t4()" id="op4t4"></button>
+        <br><br><br>
+        <label id="acerto4"></label>
+        <br><br><br>
+        <button onclick="reiniciar4()" id="reiniciar4">Jogar de novo</button>
+        <br><br><br>
+        <button onclick="voltarmenu4()" id="menuvoltar4">Voltar para o menu</button>
+
+    </div>
+
+    <div id="dt5">
+        <label id="esp">Tabuada do 5</label>
+        <br><br>
+        <label id="esp">Responda as questões:</label>
+        <br><br>
+        <label >Quanto é <label id="valor1t5">5</label> x <label id="valor2t5"></label>?</label>
+        <br><br>
+        <button onclick="op1t5()" id="op1t5"></button>
+        <button onclick="op2t5()" id="op2t5"></button>
+        <button onclick="op3t5()" id="op3t5"></button>
+        <button onclick="op4t5()" id="op4t5"></button>
+        <br><br><br>
+        <label id="acerto5"></label>
+        <br><br><br>
+        <button onclick="reiniciar5()" id="reiniciar5">Jogar de novo</button>
+        <br><br><br>
+        <button onclick="voltarmenu5()" id="menuvoltar5">Voltar para o menu</button>
+
+    </div>
+
+    <script>
+        let menu = document.getElementById("menu")
+        let t1 = document.getElementById("dt1")
+        let t2 = document.getElementById("dt2")
+        let t3 = document.getElementById("dt3")
+        let t4 = document.getElementById("dt4")
+        let t5 = document.getElementById("dt5")
+
+        menu.classList.add("aparece")
+        t1.classList.add("some")
+        t2.classList.add("some")
+        t3.classList.add("some")
+        t4.classList.add("some")
+        t5.classList.add("some")
+
+        resultado = 0
+        resultadoe2 = 0
+        resultadoe3 = 0
+        resultadoe4 = 0
+
+        certo = 0
+
+        function ot1(){
+            menu.classList.remove("aparece")
+            menu.classList.add("some")
+            t1.classList.remove("some")
+            t1.classList.add("aparece")
+            calct1()
+            
+        }
+        function ot2(){
+            menu.classList.remove("aparece")
+            menu.classList.add("some")
+            t2.classList.remove("some")
+            t2.classList.add("aparece")
+            calct2()
+        }
+        function ot3(){
+            menu.classList.remove("aparece")
+            menu.classList.add("some")
+            t3.classList.remove("some")
+            t3.classList.add("aparece")
+            calct3()
+        }
+        function ot4(){
+            menu.classList.remove("aparece")
+            menu.classList.add("some")
+            t4.classList.remove("some")
+            t4.classList.add("aparece")
+            calct4()
+        }
+        function ot5(){
+            menu.classList.remove("aparece")
+            menu.classList.add("some")
+            t5.classList.remove("some")
+            t5.classList.add("aparece")
+            calct5()
+        }
+
+        function calct1(){
+            valor2 = parseInt(Math.random() * (11 - 1) + 1);
+            document.getElementById("valor2t1").innerHTML = valor2
+            valor1 = 1
+            resultado = valor1 * valor2
+            valor2t1()
+            valor3t1()
+            valor4t1()
+
+            verificacao()
+           
+            
+
+            local = parseInt(Math.random() * (5 - 1) + 1);
+
+            if (local == 1) {
+              document.getElementById("op1t1").innerHTML = resultado  
+              document.getElementById("op2t1").innerHTML = resultadoe2  
+              document.getElementById("op3t1").innerHTML = resultadoe3 
+              document.getElementById("op4t1").innerHTML = resultadoe4 
+              certo = 1
+            }else if (local == 2) {
+              document.getElementById("op1t1").innerHTML = resultadoe2  
+              document.getElementById("op2t1").innerHTML = resultado  
+              document.getElementById("op3t1").innerHTML = resultadoe3 
+              document.getElementById("op4t1").innerHTML = resultadoe4 
+              certo = 2
+            }else if (local == 3) {
+              document.getElementById("op1t1").innerHTML = resultadoe2  
+              document.getElementById("op2t1").innerHTML = resultadoe3  
+              document.getElementById("op3t1").innerHTML = resultado 
+              document.getElementById("op4t1").innerHTML = resultadoe4 
+              certo = 3
+            }else if (local == 4) {
+              document.getElementById("op1t1").innerHTML = resultadoe2  
+              document.getElementById("op2t1").innerHTML = resultadoe3  
+              document.getElementById("op3t1").innerHTML = resultadoe4
+              document.getElementById("op4t1").innerHTML = resultado
+              certo = 4
+            }
+            
+        }
+
+        function calct2(){
+            valor2 = parseInt(Math.random() * (11 - 1) + 1);
+            console.log(valor2);
+            document.getElementById("valor2t2").innerHTML = valor2
+            valor1 = 2
+            resultado = valor1 * valor2
+            valor2t1()
+            valor3t1()
+            valor4t1()
+
+            verificacao()
+           
+            
+
+            local = parseInt(Math.random() * (5 - 1) + 1);
+
+            if (local == 1) {
+              document.getElementById("op1t2").innerHTML = resultado  
+              document.getElementById("op2t2").innerHTML = resultadoe2  
+              document.getElementById("op3t2").innerHTML = resultadoe3 
+              document.getElementById("op4t2").innerHTML = resultadoe4 
+              certo = 1
+            }else if (local == 2) {
+              document.getElementById("op1t2").innerHTML = resultadoe2  
+              document.getElementById("op2t2").innerHTML = resultado  
+              document.getElementById("op3t2").innerHTML = resultadoe3 
+              document.getElementById("op4t2").innerHTML = resultadoe4 
+              certo = 2
+            }else if (local == 3) {
+              document.getElementById("op1t2").innerHTML = resultadoe2  
+              document.getElementById("op2t2").innerHTML = resultadoe3  
+              document.getElementById("op3t2").innerHTML = resultado 
+              document.getElementById("op4t2").innerHTML = resultadoe4 
+              certo = 3
+            }else if (local == 4) {
+              document.getElementById("op1t2").innerHTML = resultadoe2  
+              document.getElementById("op2t2").innerHTML = resultadoe3  
+              document.getElementById("op3t2").innerHTML = resultadoe4
+              document.getElementById("op4t2").innerHTML = resultado
+              certo = 4
+            }
+            
+        }
+
+        function calct3(){
+            valor2 = parseInt(Math.random() * (11 - 1) + 1);
+            console.log(valor2);
+            document.getElementById("valor2t3").innerHTML = valor2
+            valor1 = 3
+            resultado = valor1 * valor2
+            valor2t1()
+            valor3t1()
+            valor4t1()
+
+            verificacao()
+           
+            
+
+            local = parseInt(Math.random() * (5 - 1) + 1);
+
+            if (local == 1) {
+              document.getElementById("op1t3").innerHTML = resultado  
+              document.getElementById("op2t3").innerHTML = resultadoe2  
+              document.getElementById("op3t3").innerHTML = resultadoe3 
+              document.getElementById("op4t3").innerHTML = resultadoe4 
+              certo = 1
+            }else if (local == 2) {
+              document.getElementById("op1t3").innerHTML = resultadoe2  
+              document.getElementById("op2t3").innerHTML = resultado  
+              document.getElementById("op3t3").innerHTML = resultadoe3 
+              document.getElementById("op4t3").innerHTML = resultadoe4 
+              certo = 2
+            }else if (local == 3) {
+              document.getElementById("op1t3").innerHTML = resultadoe2  
+              document.getElementById("op2t3").innerHTML = resultadoe3  
+              document.getElementById("op3t3").innerHTML = resultado 
+              document.getElementById("op4t3").innerHTML = resultadoe4 
+              certo = 3
+            }else if (local == 4) {
+              document.getElementById("op1t3").innerHTML = resultadoe2  
+              document.getElementById("op2t3").innerHTML = resultadoe3  
+              document.getElementById("op3t3").innerHTML = resultadoe4
+              document.getElementById("op4t3").innerHTML = resultado
+              certo = 4
+            }
+            
+        }
+
+        function calct4(){
+            valor2 = parseInt(Math.random() * (11 - 1) + 1);
+            console.log(valor2);
+            document.getElementById("valor2t4").innerHTML = valor2
+            valor1 = 4
+            resultado = valor1 * valor2
+            valor2t1()
+            valor3t1()
+            valor4t1()
+
+            verificacao()
+           
+            
+
+            local = parseInt(Math.random() * (5 - 1) + 1);
+
+            if (local == 1) {
+              document.getElementById("op1t4").innerHTML = resultado  
+              document.getElementById("op2t4").innerHTML = resultadoe2  
+              document.getElementById("op3t4").innerHTML = resultadoe3 
+              document.getElementById("op4t4").innerHTML = resultadoe4 
+              certo = 1
+            }else if (local == 2) {
+              document.getElementById("op1t4").innerHTML = resultadoe2  
+              document.getElementById("op2t4").innerHTML = resultado  
+              document.getElementById("op3t4").innerHTML = resultadoe3 
+              document.getElementById("op4t4").innerHTML = resultadoe4 
+              certo = 2
+            }else if (local == 3) {
+              document.getElementById("op1t4").innerHTML = resultadoe2  
+              document.getElementById("op2t4").innerHTML = resultadoe3  
+              document.getElementById("op3t4").innerHTML = resultado 
+              document.getElementById("op4t4").innerHTML = resultadoe4 
+              certo = 3
+            }else if (local == 4) {
+              document.getElementById("op1t4").innerHTML = resultadoe2  
+              document.getElementById("op2t4").innerHTML = resultadoe3  
+              document.getElementById("op3t4").innerHTML = resultadoe4
+              document.getElementById("op4t4").innerHTML = resultado
+              certo = 4
+            }
+            
+        }
+
+        function calct5(){
+            valor2 = parseInt(Math.random() * (11 - 1) + 1);
+            console.log(valor2);
+            document.getElementById("valor2t5").innerHTML = valor2
+            valor1 = 5
+            resultado = valor1 * valor2
+            valor2t1()
+            valor3t1()
+            valor4t1()
+
+            verificacao()
+           
+            
+
+            local = parseInt(Math.random() * (5 - 1) + 1);
+
+            if (local == 1) {
+              document.getElementById("op1t5").innerHTML = resultado  
+              document.getElementById("op2t5").innerHTML = resultadoe2  
+              document.getElementById("op3t5").innerHTML = resultadoe3 
+              document.getElementById("op4t5").innerHTML = resultadoe4 
+              certo = 1
+            }else if (local == 2) {
+              document.getElementById("op1t5").innerHTML = resultadoe2  
+              document.getElementById("op2t5").innerHTML = resultado  
+              document.getElementById("op3t5").innerHTML = resultadoe3 
+              document.getElementById("op4t5").innerHTML = resultadoe4 
+              certo = 2
+            }else if (local == 3) {
+              document.getElementById("op1t5").innerHTML = resultadoe2  
+              document.getElementById("op2t5").innerHTML = resultadoe3  
+              document.getElementById("op3t5").innerHTML = resultado 
+              document.getElementById("op4t5").innerHTML = resultadoe4 
+              certo = 3
+            }else if (local == 4) {
+              document.getElementById("op1t5").innerHTML = resultadoe2  
+              document.getElementById("op2t5").innerHTML = resultadoe3  
+              document.getElementById("op3t5").innerHTML = resultadoe4
+              document.getElementById("op4t5").innerHTML = resultado
+              certo = 4
+            }
+            
+        }
+
+        function valor2t1(){
+            lim = valor1 * 10
+            let x = parseInt(Math.random() * (lim - 1) + 1);
+            console.log("valor 2t1 == "+x);
+            if (x == resultado) {
+                valor2t1()
+            }else{
+                resultadoe2 = x
+            }
+        }
+
+        function valor3t1(){
+            let x = parseInt(Math.random() * (lim - 1) + 1);
+            console.log("valor 3t1 == "+x);
+            if (x == resultado) {
+                valor3t1()
+            }else{
+                resultadoe3 = x
+            }
+        }
+
+        function valor4t1(){
+            let x = parseInt(Math.random() * (lim - 1) + 1);
+            console.log("valor 4t1 == "+x);
+            if (x == resultado) {
+                valor4t1()
+            }else{
+                resultadoe4 = x
+            }
+            verificacao()
+        }
+
+        function verificacao(){
+            if (resultadoe2 == resultadoe3 ||resultadoe2 == resultadoe4 || resultadoe3 == resultadoe4) {
+                valor2t1()
+                valor3t1()
+                valor4t1()   
+            }
+        }
+
+        function op1t1(){
+            if (certo == 1) {
+                document.getElementById("acerto").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op1t1").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op1t1").style.borderColor = "red"
+            }
+        }
+        function op2t1(){
+            if (certo == 2) {
+                document.getElementById("acerto").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op2t1").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal + "<br>" + resultadofinal
+                document.getElementById("op2t1").style.borderColor = "red"
+            }
+        }
+        function op3t1(){
+            if (certo == 3) {
+                document.getElementById("acerto").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op3t1").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op3t1").style.borderColor = "red"
+            }
+        }
+        function op4t1(){
+            if (certo == 4) {
+                document.getElementById("acerto").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op4t1").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op4t1").style.borderColor = "red"
+            }
+        }
+
+
+
+
+        function op1t2(){
+            if (certo == 1) {
+                document.getElementById("acerto2").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op1t2").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto2").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op1t2").style.borderColor = "red"
+            }
+        }
+        function op2t2(){
+            if (certo == 2) {
+                document.getElementById("acerto2").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op2t2").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto2").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal + "<br>" + resultadofinal
+                document.getElementById("op2t2").style.borderColor = "red"
+            }
+        }
+        function op3t2(){
+            if (certo == 3) {
+                document.getElementById("acerto2").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op3t2").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto2").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op3t2").style.borderColor = "red"
+            }
+        }
+        function op4t2(){
+            if (certo == 4) {
+                document.getElementById("acerto2").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op4t2").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto2").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op4t2").style.borderColor = "red"
+            }
+        }
+
+
+
+
+
+        function op1t3(){
+            if (certo == 1) {
+                document.getElementById("acerto3").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op1t3").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto3").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op1t3").style.borderColor = "red"
+            }
+        }
+        function op2t3(){
+            if (certo == 2) {
+                document.getElementById("acerto3").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op2t3").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto3").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal + "<br>" + resultadofinal
+                document.getElementById("op2t3").style.borderColor = "red"
+            }
+        }
+        function op3t3(){
+            if (certo == 3) {
+                document.getElementById("acerto3").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op3t3").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto3").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op3t3").style.borderColor = "red"
+            }
+        }
+        function op4t3(){
+            if (certo == 4) {
+                document.getElementById("acerto3").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op4t3").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto3").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op4t3").style.borderColor = "red"
+            }
+        }
+
+
+
+        function op1t4(){
+            if (certo == 1) {
+                document.getElementById("acerto4").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op1t4").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto4").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op1t4").style.borderColor = "red"
+            }
+        }
+        function op2t4(){
+            if (certo == 2) {
+                document.getElementById("acerto4").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op2t4").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto4").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal + "<br>" + resultadofinal
+                document.getElementById("op2t4").style.borderColor = "red"
+            }
+        }
+        function op3t4(){
+            if (certo == 3) {
+                document.getElementById("acerto4").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op3t4").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto4").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op3t4").style.borderColor = "red"
+            }
+        }
+        function op4t4(){
+            if (certo == 4) {
+                document.getElementById("acerto4").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op4t4").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto4").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op4t4").style.borderColor = "red"
+            }
+        }
+
+        function op1t5(){
+            if (certo == 1) {
+                document.getElementById("acerto5").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op1t5").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto5").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op1t5").style.borderColor = "red"
+            }
+        }
+        function op2t5(){
+            if (certo == 2) {
+                document.getElementById("acerto5").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op2t5").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto5").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal + "<br>" + resultadofinal
+                document.getElementById("op2t5").style.borderColor = "red"
+            }
+        }
+        function op3t5(){
+            if (certo == 3) {
+                document.getElementById("acerto5").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op3t5").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto5").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op3t5").style.borderColor = "red"
+            }
+        }
+        function op4t5(){
+            if (certo == 4) {
+                document.getElementById("acerto5").innerHTML = "Parabéns, você acertou a resposta"
+                document.getElementById("op4t5").style.borderColor = "rgb(0, 255, 0)"
+            }else{
+                explicacao()
+                document.getElementById("acerto5").innerHTML = "Quase acertou, mas a resposta correta é " + resultado + explicacaofinal+ "<br>" + resultadofinal
+                document.getElementById("op4t5").style.borderColor = "red"
+            }
+        }
+
+
+        function explicacao(){
+            explicacaofinal = " pois " + valor1 + " x " + valor2 + " é o mesmo que " 
+            resultadofinal =""
+            for(let i=0; i< (valor2-1); i++){
+                let y = valor1 + " + "
+                resultadofinal += y
+            }
+            resultadofinal += valor1 + " = " + resultado
+        }
+
+        function reiniciar(){
+            calct1()
+            document.getElementById("op1t1").style.borderColor = "black"
+            document.getElementById("op2t1").style.borderColor = "black"
+            document.getElementById("op3t1").style.borderColor = "black"
+            document.getElementById("op4t1").style.borderColor = "black"
+            document.getElementById("acerto").innerHTML = ""
+        }
+
+        function reiniciar2(){
+            calct2()
+            document.getElementById("op1t2").style.borderColor = "black"
+            document.getElementById("op2t2").style.borderColor = "black"
+            document.getElementById("op3t2").style.borderColor = "black"
+            document.getElementById("op4t2").style.borderColor = "black"
+            document.getElementById("acerto2").innerHTML = ""
+        }
+
+        function reiniciar3(){
+            calct3()
+            document.getElementById("op1t3").style.borderColor = "black"
+            document.getElementById("op2t3").style.borderColor = "black"
+            document.getElementById("op3t3").style.borderColor = "black"
+            document.getElementById("op4t3").style.borderColor = "black"
+            document.getElementById("acerto3").innerHTML = ""
+        }
+
+        function reiniciar4(){
+            calct4()
+            document.getElementById("op1t4").style.borderColor = "black"
+            document.getElementById("op2t4").style.borderColor = "black"
+            document.getElementById("op3t4").style.borderColor = "black"
+            document.getElementById("op4t4").style.borderColor = "black"
+            document.getElementById("acerto4").innerHTML = ""
+        }
+
+        function reiniciar5(){
+            calct5()
+            document.getElementById("op1t5").style.borderColor = "black"
+            document.getElementById("op2t5").style.borderColor = "black"
+            document.getElementById("op3t5").style.borderColor = "black"
+            document.getElementById("op4t5").style.borderColor = "black"
+            document.getElementById("acerto5").innerHTML = ""
+        }
+
+        function voltarmenu(){
+            menu.classList.add("aparece")
+            menu.classList.remove("some")
+            t1.classList.add("some")
+            t1.classList.remove("aparece")
+            document.getElementById("op1t1").style.borderColor = "black"
+            document.getElementById("op2t1").style.borderColor = "black"
+            document.getElementById("op3t1").style.borderColor = "black"
+            document.getElementById("op4t1").style.borderColor = "black"
+            document.getElementById("acerto").innerHTML = ""
+        }
+        function voltarmenu2(){
+            menu.classList.add("aparece")
+            menu.classList.remove("some")
+            t2.classList.add("some")
+            t2.classList.remove("aparece")
+            document.getElementById("op1t2").style.borderColor = "black"
+            document.getElementById("op2t2").style.borderColor = "black"
+            document.getElementById("op3t2").style.borderColor = "black"
+            document.getElementById("op4t2").style.borderColor = "black"
+            document.getElementById("acerto2").innerHTML = ""
+        }
+        function voltarmenu3(){
+            menu.classList.add("aparece")
+            menu.classList.remove("some")
+            t3.classList.add("some")
+            t3.classList.remove("aparece")
+            document.getElementById("op1t3").style.borderColor = "black"
+            document.getElementById("op2t3").style.borderColor = "black"
+            document.getElementById("op3t3").style.borderColor = "black"
+            document.getElementById("op4t3").style.borderColor = "black"
+            document.getElementById("acerto3").innerHTML = ""
+        }
+
+        function voltarmenu4(){
+            menu.classList.add("aparece")
+            menu.classList.remove("some")
+            t4.classList.add("some")
+            t4.classList.remove("aparece")
+            document.getElementById("op1t4").style.borderColor = "black"
+            document.getElementById("op2t4").style.borderColor = "black"
+            document.getElementById("op3t4").style.borderColor = "black"
+            document.getElementById("op4t4").style.borderColor = "black"
+            document.getElementById("acerto4").innerHTML = ""
+        }
+
+        function voltarmenu5(){
+            menu.classList.add("aparece")
+            menu.classList.remove("some")
+            t5.classList.add("some")
+            t5.classList.remove("aparece")
+            document.getElementById("op1t5").style.borderColor = "black"
+            document.getElementById("op2t5").style.borderColor = "black"
+            document.getElementById("op3t5").style.borderColor = "black"
+            document.getElementById("op4t5").style.borderColor = "black"
+            document.getElementById("acerto5").innerHTML = ""
+        }
+
+
+        
+        
+    </script>
+</body>
+</html>
